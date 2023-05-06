@@ -1,0 +1,188 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style type="text/css">
+    body {
+        max-width: 700px;
+        font-family: Arial;
+    }
+
+    blockquote, pre {
+        border: 1px solid #000;
+        margin: 5px 0;
+        padding: 5px;
+        font-family: "Courier New";
+        font-size: 11pt;
+        background: #eee;
+    }
+
+    code {
+        background: #eee;
+        padding: 2px;
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #000;
+        padding: 5px;
+    }
+    
+    </style>
+</head>
+
+<body class="c31">
+    <h1>How to use the dedicated server</h1>
+    <h2>Disclaimer</h2>
+    <p>
+        This is an early release (alpha) which we don't fully support yet. It might contain severe issues and we could stop supporting it at any time.
+    </p>
+
+    <h2>Recommended Hardware</h2>
+    <p>
+        We recommend running the Bedrock Minecraft Server on 64-bit Intel or AMD processor machines with at least 2 cores and 1 Gb RAM.
+    </p>
+
+    <h2>Platforms</h2>
+
+    <h3>Linux</h3>
+    <p>
+        The Linux version of the Bedrock Server requires Ubuntu 18 or later. Other distributions are not supported. 
+        Unzip the container file into an empty folder. Start the server with the following command:
+    </p>
+    <blockquote>
+        LD_LIBRARY_PATH=. ./bedrock_server
+    </blockquote>
+
+    <h3>Windows</h3>
+    <p>
+        The Windows version of the Bedrock Server requires either:
+        <ul type="disc">
+            <li>Windows 10 version 1703 or later</li>
+            <li>Windows Server 2016 or later</li>
+        </ul>
+        Unzip the container file into an empty folder. Start the server by executing the <code>bedrock_server.exe</code> file.
+    </p>
+    <p>
+        On some systems, when you wish to connect to the server using a client running on the same machine as the
+        server is running on, you will need to exempt the Minecraft client from UWP loopback restrictions: 
+        <blockquote>CheckNetIsolation.exe LoopbackExempt –a –p=S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436</blockquote>.
+    </p>
+
+    <h2>Configuration</h2>
+    <p>
+        The server will try to read a file named <code>server.properties</code>. Some of these options are only read when a new world is created, while some others are read every startup. The file should contain a list with keys and values separated with an equal sign, one per line.
+    </p>
+    <p>
+        The following options are available. If a value as a number in parenthesis, that number can be used instead of the text value.
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Option name</th>
+                <th>Possible values</th>
+                <th>Default value</th>
+                <th>When is it used</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>gamemode</td>
+                <td>survival (0), creative (1), adventure (2)</td>
+                <td>survival</td>
+                <td>Always or only for new players</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>force-gamemode</td>
+                <td>true, false</td>
+                <td>false</td>
+                <td>Always</td>
+                <td>
+                    <b>force-gamemode=false</b>(or <b>force-gamemode is not defined</b> in the server.properties file)
+                    prevents the server for sending to the client gamemode values other
+                    than the gamemode value saved by the server during world creation
+                    even if those values are set in server.properties file after world creation.<br />
+                    <b>force-gamemode=true</b> forces the server to send to the client gamemode values
+                    other than the gamemode value saved by the server during world creation
+                    if those values are set in server.properties file after world creation.
+                </td>
+            </tr>
+            <tr>
+                <td>difficulty</td>
+                <td>peaceful (0), easy (1), normal (2), hard (3)</td>
+                <td>easy</td>
+                <td>Always</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>level-type</td>
+                <td>FLAT, LEGACY, DEFAULT</td>
+                <td>DEFAULT</td>
+                <td>World creation</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>server-name</td>
+                <td>Any string</td>
+                <td>Dedicated Server</td>
+                <td>Always</td>
+                <td>This is the server name shown in the in-game server list.</td>
+            </tr>
+            <tr>
+                <td>max-players</td>
+                <td>Any integer</td>
+                <td>10</td>
+                <td>Always</td>
+                <td>The maximum numbers of players that should be able to play on the server. <b>Higher values have performance impact.</b></td>
+            </tr>
+            <tr>
+                <td>server-port</td>
+                <td>Any integer</td>
+                <td>19132</td>
+                <td>Always</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>server-portv6</td>
+                <td>Any integer</td>
+                <td>19133</td>
+                <td>Always</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>level-name</td>
+                <td>Any string</td>
+                <td>level</td>
+                <td>Always</td>
+                <td>The name of level to be used/generated. Each level has its own folder in <code>/worlds</code>.</td>
+            </tr>
+            <tr>
+                <td>level-seed</td>
+                <td>Any string </td>
+                <td></td>
+                <td>World creation</td>
+                <td>The seed to be used for randomizing the world. If left empty a seed will be chosen at random.</td>
+            </tr>
+            <tr>
+                <td>online-mode</td>
+                <td>true, false</td>
+                <td>true</td>
+                <td>Always</td>
+                <td>If true then all connected players must be authenticated to Xbox Live.
+                    Clients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting.
+                    If the server accepts connections from the Internet, then it's <b>highly</b> recommended to enable online-mode.</td>
+            </tr>
+            <tr>
+                <td>allow-list</td>
+                <td>true, false</td>
+                <td>false</td>
+                <td>Always</td>
+                <td>If true then all connected players must be listed in the separate <code>allowlist.json</code> file.
+                            See the <i>Allowlist

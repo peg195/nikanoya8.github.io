@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZL服是一个公益性质的Minecraft服务器">
+    <meta name="keywords" content="我的世界,服务器,MC,Minecraft服务器,ZL Server,ZL">
+    <title>ZL Minecraft Server</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #FFF;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 500;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            z-index: -1;
+            background-image: url(./black.jpg);
+            background-size: cover;
+            opacity: .8;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            font-weight: 500;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .joinus {
+            display: inline-block;
+            margin: 10px;
+            margin-top: 30px;
+            padding: 20px;
+            color: #FFF;
+            font-size: 20px;
+            border: 3px solid #000;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all .5s;
+        }
+
+        .joinus:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFF;
+        }
+    </style>
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.2.1/animate.css" rel="stylesheet">
+</head>
+
+
+</head>
+
+<script type="text/javascript">
+    (function () {
+        let waitUntilCookieExists = (cookieName) => {
+            return new Promise((resolve, reject) => {
+                let intervalCounter = 1,
+                maxRetry = 40,
+                interval = setInterval(validateItem, 50);
+
+                function validateItem() {
+                    if (intervalCounter <= maxRetry) {
+                        if (document.cookie.indexOf(cookieName) === -1) {
+                            intervalCounter++;
+                        } else {
+                            clearInterval(interval);
+                            resolve(true);
+                        }
+                    } else {
+                        clearInterval(interval);
+                        reject(false);
+                    }
+                }
+            });
+        }
+
+        var initAdobeTarget = function () {
+            const analyticsScript = document.createElement('script'),
+            countryVisitorMeta = document.querySelector('meta[name="visitor-country-code"]');
+
+            analyticsScript.type = "text/javascript";
+            analyticsScript.src = "/etc.clientlibs/minecraft/clientlibs/main/resources/scripts/at-minecraft-v2.1.js";
+            analyticsScript.async = true;
+            const headTag = document.getElementsByTagName('head')[0];
+
+            if (countryVisitorMeta && countryVisitorMeta.getAttribute('content')?.toLowerCase() === 'us') {
+                headTag.appendChild(analyticsScript);
+            } else {
+                waitUntilCookieExists('MSCC=').then(() => {
+                    const cookieValue = document.cookie.split('; ').find((row) => row.startsWith('MSCC='))?.split('=')[1];
+
+                    if (cookieValue !== undefined && (cookieValue === 'NR' || cookieValue.indexOf('c1=2-c2=2-c3=2') !== -1)) {
+                        headTag.appendChild(analyticsScript);
+                    }
+                }).catch((err) => {
+                    //Failed to find MSCC value
+                });
+            }
+        };
+
+        //Initial check
+        initAdobeTarget();
+
+        //Add event listener
+        window.addEventListener('consentChanged', initAdobeTarget);
+
+    })();
+</script>
+
+
+<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+
+
+
+<script>
+    (window.BOOMR_mq = window.BOOMR_mq || []).push(["addVar", {
+        "rua.upush": "false",
+        "rua.cpush": "true",
+        "rua.upre": "false",
+        "rua.cpre": "true",
+        "rua.uprl": "false",
+        "rua.cprl": "false",
+        "rua.cprf": "false",
+        "rua.trans": "SJ-aa685370-ac20-4ec1-85fd-e29481e12178",
+        "rua.cook": "false",
+        "rua.ims": "false",
+        "rua.ufprl": "false",
+        "rua.cfprl": "true",
+        "rua.isuxp": "false",
+        "rua.texp": "norulematch"
+    }]);
+</script>
+<script>
+    ! function (a) {
+        var e = "https://s.go-mpulse.net/boomerang/",
+            t = "addEventListener";
+        if ("False" == "True") a.BOOMR_config = a.BOOMR_config || {}, a.BOOMR_config.PageParams = a.BOOMR_config
+            .PageParams || {}, a.BOOMR_config.PageParams.pci = !0, e = "https://s2.go-mpulse.net/boomerang/";
+        if (window.BOOMR_API_key = "YFFAU-YT7PV-UYYLA-KR9L9-43ZGM", function () {
+                function n(e) {
+                    a.BOOMR_onload = e && e.timeStamp || (new Date).getTime()
+                }
+                if (!a.BOOMR || !a.BOOMR.version && !a.BOOMR.snippetExecuted) {
+                    a.BOOMR = a.BOOMR || {}, a.BOOMR.snippetExecuted = !0;
+                    var i, _, o, r = document.createElement("iframe");
+                    if (a[t]) a[t]("load", n, !1);
+                    else if (a.attachEvent) a.attachEvent("onload", n);
+                    r.src = "javascript:void(0)", r.title = "", r.role = "presentation", (r.frameElement || r).style
+                        .cssText = "width:0;height:0;border:0;display:none;", o = document.getElementsByTagName(
+                            "script")[0], o.parentNode.insertBefore(r, o);
+                    try {
+                        _ = r.contentWindow.document
+                    } catch (O) {
+                        i = document.domain, r.src = "javascript:var d=document.open();d.domain='" + i + "';void(0);",
+                            _ = r.contentWindow.document
+                    }
+                    _.open()._l = function () {
+                        var a = this.createElement("script");
+                        if (i) this.domain = i;
+                        a.id = "boomr-if-as", a.src = e + "YFFAU-YT7PV-UYYLA-KR9L9-43ZGM", BOOMR_lstart = (new Date)
+                            .getTime(), this.body.appendChild(a)
+                    }, _.write("<bo" + 'dy onload="document._l();">'), _.close()
+                }
+            }(), "".length > 0)
+            if (a && "performance" in a && a.performance && "function" == typeof a.performance
+                .setResourceTimingBufferSize) a.performance.setResourceTimingBufferSize();
+        ! function () {
+            if (BOOMR = a.BOOMR || {}, BOOMR.plugins = BOOMR.plugins || {}, !BOOMR.plugins.AK) {
+                var e = "true" == "true" ? 1 : 0,
+                    t = "",
+                    n = "ni6swwqxed4cuzbrnlfq-f-bf2c99513-clientnsv4-s.akamaihd.net",
+                    i = "false" == "true" ? 2 : 1,
+                    _ = {
+                        "ak.v": "34",
+                        "ak.cp": "1053458",
+                        "ak.ai": parseInt("625405", 10),
+                        "ak.ol": "0",
+                        "ak.cr": 106,
+                        "ak.ipv": 4,
+                        "ak.proto": "h2",
+                        "ak.rid": "4734751",
+                        "ak.r": 10210,
+                        "ak.a2": e,
+                        "ak.m": "r",
+                        "ak.n": "ff",
+                        "ak.bpcip": "106.61.43.0",
+                        "ak.cport": 6175,
+                        "ak.gh": "23.32.248.38",
+                        "ak.quicv": "",
+                        "ak.tlsv": "tls1.3",
+                        "ak.0rtt": "",
+                        "ak.csrc": "-",
+                        "ak.acc": "",
+                        "ak.t": "1680960203",
+                        "ak.ak": "hOBiQwZUYzCg5VSAfCLimQ==6QoLiPe0SQa3fRLTegZjGvl8HLRPdxRCI5jAjgwk4lXzG1L9lMAnkFO2yUxR+/JMbfNWCszyLx2pCvS1DQJ8kGQ7J5aLpDqNv8RWEPG0t0DqvNYiX05ag8Uj0X/Dh2SExhRFZ/pvd1Al/MtaU7YEY2EsMZjPtUvsGUm9T1cP/MeUuDwSdndTfYnYzb6MaLCNQ/8SMJT+3xvgacaFfM14+hklHFTJ/lPN8q0mcgoYmmsv0Z0Bi6G34/zESkKAaF/v1nDKB81NFxf6Z6ZfcOyEvU8i3vuPOFmwinO6Z4UYDmEI62+AxGXZb32CNHx1iXOhcs3wsMjMUUSrRu49LIS5Of/qpyh+WdiyF1i3AFiUuPdZq4VO1KZ5/7/sKWI+nFkF+DjFUurRP1tAdH7lkIPuycJfKcH2zwokAG+whjkWzuQ=",
+                        "ak.pv": "137",
+                        "ak.dpoabenc": "",
+                        "ak.tf": i
+                    };
+                if ("" !== t) _["ak.ruds"] = t;
+                var o = {
+                    i: !1,
+                    av: function (e) {
+                        var t = "http.initiator";
+                        if (e && (!e[t] || "spa_hard" === e[t])) _["ak.feo"] = void 0 !== a.aFeoApplied ? 1 : 0,
+                            BOOMR.addVar(_)
+                    },
+                    rv: function () {
+                        var a = ["ak.bpcip", "ak.cport", "ak.cr", "ak.csrc", "ak.gh", "ak.ipv", "ak.m", "ak.n",
+                            "ak.ol", "ak.proto", "ak.quicv", "ak.tlsv", "ak.0rtt", "ak.r", "ak.acc", "ak.t",
+                            "ak.tf"
+                        ];
+                        BOOMR.removeVar(a)
+                    }
+                };
+                BOOMR.plugins.AK = {
+                    akVars: _,
+                    akDNSPreFetchDomain: n,
+                    init: function () {
+                        if (!o.i) {
+                            var a = BOOMR.subscribe;
+                            a("before_beacon", o.av, null, null), a("onbeacon", o.rv, null, null), o.i = !0
+                        }
+                        return this
+                    },
+                    is_complete: function () {
+                        return !0
+                    }
+                }
+            }
+        }()
+    }(window);
+</script>
+</head>
+
+
+
+
+
+<nav class="wow fadeInDown" data-wow-duration="1.4s" data-wow-delay="0.5s">
+    <h2>ZL Minecraft Server</h2>
+    <a href="../index.html">前往中文官网</a>
+
+
+    <a href="index.html" class="logo">
+
+    </a>
+    <marquee><a href="#" id="hitokoto_text"></a> </marquee>
+
+    </p>
+
+    <script>
+        fetch('https://v1.hitokoto.cn')
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                const hitokoto = document.querySelector('#hitokoto_text')
+
+                hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+
+                hitokoto.innerText = data.hitokoto
+            })
+
+            .catch(console.error)
+    </script>
+
+    </ul>
+
+</nav>
+<div id="background">
+</div>
+<main>
+    <div class="content wow fadeInDown" data-wow-duration="1.4s" data-wow-delay="0.5s">
+        <h1>ZL Minecraft Server</h1>
+        <h2 class="title">Survival PE Server For ZL Minecraft Server</h2>
+        <p>Minecraft version supported by the server:1.19.71-72</p>
+
+
+
+        <div class="modal-backdrop fade"></div>
+        <a href="https://qm.qq.com/cgi-bin/qm/qr?k=2t344mpP93nFltm2ZGKpvHlGjCK1GKCT&authKey=wqOZcSDZg3LO4eV2mtFyrYFaUaoHvBR3V5m+TmWW2wPtKOTjUn5aA03ReuDYbyUr&noverify=0&personal_qrcode_source=0"
+            class="joinus" target="_blank">
+            QQ Group
+            <a href="Tips.html" class="joinus" target="_black">
+
+                News
+            </a>
+            <section style="margin-top:100px;" class="wow fadeInDown" data-wow-duration="1.4s" data-wow-delay="0.5s">
+                <h1>Contact us</h1>
+			  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=m_L07uPu_vX89O7b-fTj9vry97X49PY" style="text-decoration:none;">Send us an email</a>
+                <h1> </h1>
+                <section style="margin-top:100px;">
+
+
+
+                    <h3>Friendship website</h3>
+                    <section style="margin-top:10px;">
+                        <a href="http://dfggmc.cn.eu.org/">dfggMC Server</a> <a href="http://dfggbbs.eu.org/">|dfgg MC
+                            Minecraft BBS</a>
+
+                    </section>
+                    <p style="text-align: center;margin-top:18px;">
+                        <h4>Chinese Poetry by "Yiyan" Provide technical support</h4>&copy;2023 <a
+                            href="http://zl.cn.eu.org/">ZL
+                            Minecraft Server</a>
+                    </p>
+
+                    <a href="../zh-cn/egg.html">Html Version number:2.4</a>
+                  <a href="https://icp.gov.moe/?keyword=20231144" target="_blank">mengICPbei20231144号</a>
+
+
+                    <section style="margin-top:100px;">
+    </div>
+</main>
+<script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.js"></script>
+<script type="text/javascript">
+    new WOW().init();
+    var wow = new WOW({
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 0,
+      mobile: true,
+      live: true
+    });
+    wow.init();
+  </script>
+
+</html>
